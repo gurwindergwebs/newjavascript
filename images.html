@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img width="400" height="300" src="images/1.jpg" name="myImage" />
+    <br />
+    <a href="#" onClick="changeImage(-2)"><</a>&nbsp;&nbsp;&nbsp;
+    <a href="#" onClick="changeImage(0)">1</a>&nbsp;&nbsp;&nbsp;
+    <a href="#" onClick="changeImage(1)">2</a>&nbsp;&nbsp;&nbsp;
+    <a href="#" onClick="changeImage(2)">3</a>&nbsp;&nbsp;&nbsp;
+    <a href="#" onClick="changeImage(-1)">></a>
+    <script>
+      var images = ["1.jpg", "2.jpg", "3.jpg"];
+      var currentIndex = 0;
+      function changeImage(index = -1) {
+        if (index > -1) {
+          document.myImage.src = "images/" + images[index];
+          currentIndex = index;
+        } else {
+          if (index == -1) {
+            if (currentIndex < images.length - 1) {
+              document.myImage.src = "images/" + images[++currentIndex];
+            } else {
+              document.myImage.src = "images/" + images[0];
+              currentIndex = 0;
+            }
+          } else {
+            if (currentIndex > 0) {
+              document.myImage.src = "images/" + images[--currentIndex];
+            } else {
+              document.myImage.src = "images/" + images[images.length - 1];
+              currentIndex = images.length - 1;
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

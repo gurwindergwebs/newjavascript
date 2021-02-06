@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script language="JavaScript">
+      function newDocument() {
+        document.open();
+        document.write("<p>This is a New Document.</p>");
+        document.close();
+      }
+    </script>
+  </head>
+  <body>
+    <p>This is the original document.</p>
+    <p><a href="#" onClick="newDocument()">Display New Document</a></p>
+  </body>
+</html>
